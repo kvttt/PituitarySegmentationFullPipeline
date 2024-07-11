@@ -104,6 +104,12 @@ output="${args[1]}"
 atlas_lst=("$atlas_dir"/{01..10}_t1_strip_n4.nii.gz)
 mask_lst=("$atlas_dir"/{01..10}_m_resampled.nii.gz)
 
+if [ ! -f "$input" ]
+then
+    echo "Input file $input not found. Exiting..."
+    exit 1
+fi
+
 if [ "$transform" != "Affine" ] && [ "$transform" != "SyN" ] && [ "$transform" != "SyNQuick" ]
 then
     echo "Unsupported transform type $transform. Exiting..."
