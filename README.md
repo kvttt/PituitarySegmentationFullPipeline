@@ -39,10 +39,10 @@ For this pipeline, a couple of things are required:
     They should be organized as follows:
     ```
     - atlas_dir
-        - 01_t1_strip_n4.nii.gz
-        - 01_m_resampled.nii.gz
-        - 02_t1_strip_n4.nii.gz
-        - 02_m_resampled.nii.gz
+        - 1_t1_strip_n4.nii.gz
+        - 1_m_resampled.nii.gz
+        - 2_t1_strip_n4.nii.gz
+        - 2_m_resampled.nii.gz
         - ...
         - 10_t1_strip_n4.nii.gz
         - 10_m_resampled.nii.gz 
@@ -60,10 +60,10 @@ For this pipeline, a couple of things are required:
     ```
     For example, calling 
     ```
-    ./preprocess.sh 01_t1.nii.gz
+    ./preprocess.sh 1_t1.nii.gz
     ```
-    will generate `01_t1_strip.nii.gz` and `01_t1_strip_n4.nii.gz`.
-    One would then need to manually label the pituitary in `01_t1_strip_n4.nii.gz` and save the label as `01_m_resampled.nii.gz`.
+    will generate `1_t1_strip.nii.gz` and `1_t1_strip_n4.nii.gz`.
+    One would then need to manually label the pituitary in `1_t1_strip_n4.nii.gz` and save the label as `1_m_resampled.nii.gz`.
 3. Lastly, for an unprocessed image to be segmented, one would call the pipeline as follows:
     ```
     ./seg.sh input.nii.gz output.nii.gz -a atlas_dir
